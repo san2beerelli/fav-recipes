@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Box } from "@material-ui/core";
+import CartView from './views/cart-view';
+import CheckoutView from './views/checkout-view';
+import { AppProvider } from './context/app-context';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <Box width='100vw' height='100vh' display='flex' flexDirection='row'>
+        <CartView />
+        <CheckoutView />
+      </Box>
+    </AppProvider>
   );
 }
 
